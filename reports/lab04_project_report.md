@@ -8,7 +8,7 @@
 
 **Assignment reference:** Lab 04_New, slide 18, “Course-project activity (45 minutes),” supplied photograph.
 
-This report answers the six questions on the slide using the current project code, local dataset, saved split assignments, and a freshly recomputed validation baseline. The experiment plan is in [project_plan.md](project_plan.md). Earlier draft documents retain some pending-status wording; the measured findings below are supported by [the report evidence](../results/metrics/lab04_report_evidence.json).
+This report answers the six questions on the slide using the current project code, local dataset, saved split assignments, and a freshly recomputed validation baseline. The experiment plan is in [project_plan.md](project_plan.md). The first-draft report now records completed exploration and baseline results; the measured findings below are supported by [the report evidence](../results/metrics/lab04_report_evidence.json).
 
 ## 1. Is the target clearly defined?
 

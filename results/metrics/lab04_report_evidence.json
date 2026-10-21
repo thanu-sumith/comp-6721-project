@@ -5,6 +5,43 @@
     57477,
     9
   ],
+  "joined_text_character_length_summary": {
+    "prompt_text": {
+      "count": 57477.0,
+      "mean": 352.36,
+      "std": 1025.38,
+      "min": 3.0,
+      "25%": 48.0,
+      "50%": 91.0,
+      "75%": 233.0,
+      "max": 32833.0
+    },
+    "response_a_text": {
+      "count": 57477.0,
+      "mean": 1330.37,
+      "std": 1461.91,
+      "min": 0.0,
+      "25%": 391.0,
+      "50%": 1036.0,
+      "75%": 1810.0,
+      "max": 53299.0
+    },
+    "response_b_text": {
+      "count": 57477.0,
+      "mean": 1337.18,
+      "std": 1483.79,
+      "min": 0.0,
+      "25%": 395.0,
+      "50%": 1044.0,
+      "75%": 1819.0,
+      "max": 52402.0
+    }
+  },
+  "empty_joined_text_counts": {
+    "prompt_text": 0,
+    "response_a_text": 30,
+    "response_b_text": 33
+  },
   "preprocessed_shape": [
     57477,
     14

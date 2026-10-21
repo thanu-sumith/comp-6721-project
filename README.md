@@ -15,7 +15,7 @@ python -m jupyterlab
 
 Download `train.csv` yourself from the [LLM Classification Finetuning competition](https://www.kaggle.com/competitions/llm-classification-finetuning/data), after accepting its access terms, and put it in `data/raw/train.csv`. Do not commit the dataset or Kaggle credentials.
 
-Open `notebooks/01_data_exploration.ipynb` and run its cells in order. It inspects the data, saves fixed prompt-grouped split IDs, and evaluates a class-prior baseline on validation data. It stops with a helpful message if the dataset is missing. No real experiments have been run in this starter repository.
+Open `notebooks/01_data_exploration.ipynb` and run its cells in order. It inspects the data, saves fixed prompt-grouped split IDs, and evaluates a class-prior baseline on validation data. It stops with a helpful message if the dataset is missing. Data exploration and the class-prior validation baseline have been completed. See [the first-draft report](reports/first_draft_report.md) for measured findings and the remaining response-overlap review.
 
 ## Files
 
@@ -42,9 +42,9 @@ Use seed 42 for the initial saved split; keep that split fixed for model compari
 
 ## Next milestones
 
-1. Obtain the dataset and run the notebook; record actual counts and issues.
-2. Review saved split IDs as a team and lock the split.
-3. Record the class-prior validation baseline.
+1. Review the completed data audit, including empty responses and cross-partition response pairs.
+2. Agree on the split policy and privately share the exact saved assignments.
+3. Preserve the measured class-prior validation baseline; rerun it if the split changes.
 4. Add numerical-feature and TF-IDF logistic-regression baselines using the same IDs.
 5. Study embeddings, fine-tuning, calibration, and bias according to the proposal and available compute.
 

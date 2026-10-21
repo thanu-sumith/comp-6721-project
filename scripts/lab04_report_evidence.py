@@ -28,10 +28,13 @@ def main():
              zip(df.response_a_text, df.response_b_text)]
     audit = pd.DataFrame({'pair': pairs, 'split': split})
     crossing = audit.groupby('pair')['split'].nunique().gt(1)
+    lengths = df[['prompt_text', 'response_a_text', 'response_b_text']].apply(lambda col: col.str.len())
     evidence = {
         'verified_on': '2026-10-21',
         'dataset_sha256': fingerprint,
         'raw_shape': list(raw.shape),
+        'joined_text_character_length_summary': lengths.describe().round(2).to_dict(),
+        'empty_joined_text_counts': lengths.eq(0).sum().to_dict(),
         'preprocessed_shape': list(df.shape),
         'raw_missing_values': raw.isna().sum().to_dict(),
         'class_counts': df.label.value_counts().sort_index().to_dict(),

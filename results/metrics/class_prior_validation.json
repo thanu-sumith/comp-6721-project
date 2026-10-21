@@ -1,0 +1,19 @@
+{
+  "model": "training_class_prior",
+  "evaluation_partition": "validation",
+  "dataset_sha256": "0692154aaf20fc6649090c3f49b6b5dd1e693a765ecb5f0856ae0da5946f5be2",
+  "seed": 42,
+  "class_order": [
+    "A wins",
+    "B wins",
+    "tie"
+  ],
+  "training_priors": [
+    0.3490880621683533,
+    0.3418969466755589,
+    0.3090149911560878
+  ],
+  "log_loss": 1.0972235340239587,
+  "accuracy": 0.34907794015309673,
+  "macro_f1": 0.1725019880929353
+}
