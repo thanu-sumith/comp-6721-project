@@ -34,6 +34,19 @@ Alternatively, run the starter from the terminal:
 python -m src.baseline
 ```
 
+## Baselines, calibration and data-efficiency (Avani's tasks)
+
+Run from the repo root after `data/raw/train.csv` and the team's shared `data/splits/` files are in place:
+
+```bash
+python tests/smoke_test.py                 # optional: checks the code runs (synthetic data only)
+python scripts/run_baselines.py            # prior, numeric LR / gradient boosting, TF-IDF LR (validation only)
+python scripts/run_calibration.py          # temperature scaling, ECE, reliability diagrams
+python scripts/run_data_efficiency.py      # E3: learning curves + label-noise audit
+```
+
+Code lives in `src/metrics.py`, `src/features.py`, `src/models.py`, `src/calibration.py`, `src/experiment.py`. Every model saves validation probabilities to `results/predictions/<model>__<variant>__seed<k>__validation.npz`; any later model (embeddings, DeBERTa, LoRA) that saves the same format is picked up by `run_calibration.py` automatically. None of these scripts score the local test partition.
+
 ## Evaluation rules
 
 Label order: `0 = A wins`, `1 = B wins`, `2 = tie`. There is no single positive class in this multiclass task. Group by parsed prompt; never let a prompt cross partitions. Fit features, class priors, and models on training data only. Tune and calibrate using validation data (use a separate calibration subset or nested procedure for later calibration comparisons). Reserve the local test partition for final evaluation. Hidden Kaggle labels cannot support local metrics.
