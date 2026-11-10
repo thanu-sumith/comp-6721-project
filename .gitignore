@@ -10,3 +10,4 @@ data/splits/*
 !data/splits/.gitkeep
 *.joblib
 *.pkl
+data/cache/
