@@ -47,6 +47,61 @@ python scripts/run_data_efficiency.py      # E3: learning curves + label-noise a
 
 Code lives in `src/metrics.py`, `src/features.py`, `src/models.py`, `src/calibration.py`, `src/experiment.py`. Every model saves validation probabilities to `results/predictions/<model>__<variant>__seed<k>__validation.npz`; any later model (embeddings, DeBERTa, LoRA) that saves the same format is picked up by `run_calibration.py` automatically. None of these scripts score the local test partition.
 
+## Frozen embedding experiment (Sumith)
+
+The first real-data run is complete. Validation accuracy is **43.0672%** versus
+34.9078% for the class prior. Raw log loss is 1.106242 (worse than the prior's
+1.097224); the team's cross-fitted calibration improves it to **1.063222**.
+See [the experiment report](reports/embedding_experiment.md) for results, checks,
+reproduction and the unresolved v1 response-overlap limitation. DeBERTa is not
+implemented by this experiment; final local test performance remains unmeasured.
+
+The first embedding model uses the pinned `all-MiniLM-L6-v2` encoder with a
+training-only `StandardScaler` and multinomial logistic regression. Encoder
+weights stay frozen. It requires the team's existing split files; it will not
+create replacement assignments. Only train and validation text is encoded.
+
+```bash
+python -m pip install -r requirements-embeddings.txt
+python -m unittest discover -s tests -p test_embeddings.py -v
+python scripts/run_embeddings.py
+```
+
+`--device mps` selects Apple GPU acceleration; `--device cpu` runs on CPU.
+The encoder's default revision is pinned in `src/embeddings.py`. Model downloads
+and resumable document embeddings are cached under the ignored `data/cache/`.
+`--local-files-only` supports a pre-populated local model cache.
+
+Long text is split into consecutive chunks of at most 254 content tokens plus
+special tokens. Normalized chunk embeddings are averaged by content-token count,
+then normalized again. No content tokens are deliberately truncated. Empty text
+maps to a zero vector. Features combine prompt/A/B embeddings, absolute A/B
+differences, prompt-answer products, and three cosine similarities. With the
+384-dimensional encoder this gives 2,307 classifier features. This pooling loses
+cross-chunk interactions and explicit conversation-turn alignment.
+
+The initial classifier uses fixed C=1 and seed 42; there is no validation grid
+search. Optional `--swap-aug` trains both orderings and averages swapped
+probabilities. Any scaler is fitted on training rows only. Reports include
+dataset and split hashes, model revision, environment versions, token coverage,
+class-prior comparison, and a prompt-group bootstrap log-loss interval. The
+interval does not measure training-seed variability. Current v1 response-pair
+overlap remains a limitation. The local test partition is not encoded or scored.
+
+Outputs:
+
+- `results/metrics/embeddings_minilm_chunkmean_validation.json`: measured scores and provenance.
+- `results/predictions/embeddings__minilm_chunkmean__seed42__validation.npz`: complete aligned validation `ids`, `probs`, `y` in A/B/tie order.
+- `results/models/embeddings__minilm_chunkmean__seed42.joblib`: classifier and encoder configuration (local only).
+- `results/figures/embeddings_minilm_chunkmean_reliability.png`: validation reliability plot.
+
+Prediction files are Git-ignored because their IDs reveal validation membership.
+Share the prediction file privately with Avani, then run
+`python scripts/run_calibration.py --pattern 'embeddings__*__validation.npz'`.
+Each report lists whether log loss improved; improvement is not assumed.
+Use a fresh `--results` directory to preserve a previous experiment rather than
+overwriting its predictions.
+
 ## Evaluation rules
 
 Label order: `0 = A wins`, `1 = B wins`, `2 = tie`. There is no single positive class in this multiclass task. Group by parsed prompt; never let a prompt cross partitions. Fit features, class priors, and models on training data only. Tune and calibrate using validation data (use a separate calibration subset or nested procedure for later calibration comparisons). Reserve the local test partition for final evaluation. Hidden Kaggle labels cannot support local metrics.

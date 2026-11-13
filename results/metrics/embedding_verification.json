@@ -1,0 +1,16 @@
+{
+  "verified_checks": [
+    "full_validation_alignment",
+    "finite_normalized_probabilities",
+    "metric_recomputation",
+    "unchanged_split_files",
+    "train_only_scaler",
+    "classifier_reload"
+  ],
+  "source_sha256": {
+    "src/embeddings.py": "01835a8cb8567dc204394a2c7233da1280547d8e3488d89ea4148018d23e5eca",
+    "scripts/run_embeddings.py": "f2e651457de1ebe8e9f5c9fe8da0eb52dcbd4a980a047cbf695bcfb0308469b8",
+    "tests/test_embeddings.py": "7ae338956a2f30ed0b3f5247f5a933021e3c4c3cc8115a416caa0c1f6ab71584",
+    "requirements-embeddings.txt": "96955f67fdd84422fc62303f2d9471323e69421353086ba887451f9a5931dbf6"
+  }
+}

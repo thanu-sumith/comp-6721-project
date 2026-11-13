@@ -1,0 +1,121 @@
+{
+  "model": "embeddings",
+  "variant": "minilm_chunkmean",
+  "partition": "validation",
+  "dataset_sha256": "0692154aaf20fc6649090c3f49b6b5dd1e693a765ecb5f0856ae0da5946f5be2",
+  "split_files_sha256": {
+    "manifest.json": "8d85cde8ca34152f77efcde04f2fe5657f23b1d01f96f23db2dd697472ebeb4e",
+    "split_ids.csv": "18a431514a6c90aed4b8a60ae408ee47df9a93d317f6e14de937f9ba208d4548"
+  },
+  "split_counts": {
+    "train": 34487,
+    "validation": 11496,
+    "test": 11494
+  },
+  "class_order": [
+    "A wins",
+    "B wins",
+    "tie"
+  ],
+  "seed": 42,
+  "encoder": {
+    "model": "sentence-transformers/all-MiniLM-L6-v2",
+    "revision": "c9745ed1d9f207416be6d2e6f8de32d1f16199bf",
+    "max_tokens": 256,
+    "pooling": "token_chunks_length_weighted_mean_l2_v1",
+    "versions": {
+      "numpy": "2.4.6",
+      "pandas": "3.1.1",
+      "scikit-learn": "1.9.1",
+      "scipy": "1.17.1",
+      "torch": "2.15.0",
+      "sentence-transformers": "5.7.0",
+      "transformers": "5.22.2",
+      "tokenizers": "0.23.3",
+      "python": "3.11.4"
+    },
+    "dimension": 384
+  },
+  "encoder_frozen": true,
+  "device": "mps:0",
+  "classifier": {
+    "kind": "StandardScaler + LogisticRegression",
+    "C": 1.0,
+    "hyperparameter_search": false,
+    "iterations": [
+      209
+    ],
+    "feature_dimension": 2307
+  },
+  "text_coverage": {
+    "documents": 137949,
+    "multi_chunk_documents": 46735,
+    "empty_documents": 54,
+    "max_content_tokens": 15672,
+    "max_chunks": 62,
+    "content_tokens_discarded": 0
+  },
+  "validation_metrics": {
+    "log_loss": 1.1062417454934141,
+    "accuracy": 0.4306715379262352,
+    "macro_f1": 0.42852005089990963,
+    "per_class_f1": [
+      0.4541145010331834,
+      0.4395080321285141,
+      0.39193761953803147
+    ],
+    "ece_top_label": 0.10233397293136444,
+    "ece_classwise_mean": 0.07317705330334269,
+    "ece_classwise": [
+      0.07309939105539846,
+      0.07568957260431206,
+      0.0707421962503176
+    ],
+    "mean_confidence": 0.5330055108575996,
+    "predicted_class_share": [
+      0.36656228253305495,
+      0.35116562282533054,
+      0.28227209464161446
+    ],
+    "log_loss_ci95": [
+      1.094559295125462,
+      1.1160887664238601
+    ]
+  },
+  "class_prior_metrics": {
+    "log_loss": 1.0972235340239587,
+    "accuracy": 0.34907794015309673,
+    "macro_f1": 0.1725019880929353,
+    "per_class_f1": [
+      0.5175059642788059,
+      0.0,
+      0.0
+    ],
+    "ece_top_label": 1.0122015256464056e-05,
+    "ece_classwise_mean": 3.2051787159259604e-05,
+    "ece_classwise": [
+      1.0122015256464056e-05,
+      4.8077680738889406e-05,
+      3.795566548242535e-05
+    ],
+    "mean_confidence": 0.3490880621683532,
+    "predicted_class_share": [
+      1.0,
+      0.0,
+      0.0
+    ]
+  },
+  "log_loss_improvement_over_prior": -0.009018211469455473,
+  "predictions": "predictions/embeddings__minilm_chunkmean__seed42__validation.npz",
+  "predictions_sha256": "47d07bd251adc14604d82ba3c326b0b56da8638efad3b3c65562790fda204d77",
+  "classifier_artifact": "models/embeddings__minilm_chunkmean__seed42.joblib",
+  "feature_seconds": 666.4624222910024,
+  "elapsed_seconds": 691.3768200000013,
+  "limitations": [
+    "Current v1 split retains the previously reported 27 cross-partition response-pair groups (196 rows).",
+    "English pretrained encoder; multilingual and code performance not separately established.",
+    "Chunk averaging loses interactions across chunks and explicit turn alignment.",
+    "Confidence interval is conditional on this fixed model and split; it is not training-seed variability.",
+    "Local test was not encoded, fitted or scored."
+  ]
+}
