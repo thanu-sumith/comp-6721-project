@@ -64,3 +64,11 @@ class PreferenceModel:
         if self.swap_aug:
             p = 0.5 * (p + self._proba(feats.design(swap=True))[:, SWAP_PERM])
         return normalize(p)
+
+    def predict_proba_swapped(self, feats):
+        """Judge the pair with A and B exchanged, mapped back to original A/B/tie coordinates.
+
+        Used by the E1 position-bias check: a model with no position preference returns
+        (almost) the same distribution here as `predict_proba`.
+        """
+        return normalize(self._proba(feats.design(swap=True))[:, SWAP_PERM])

@@ -1,0 +1,18 @@
+{
+  "prior_log_loss": 1.0972235340239587,
+  "rows": [
+    {
+      "model": "class prior",
+      "variant": "\u2014",
+      "selection": "none",
+      "log_loss": 1.0972235340239587,
+      "log_loss_std": null,
+      "accuracy": 0.34907794015309673,
+      "macro_f1": 0.1725019880929353,
+      "log_loss_cal": null,
+      "ece": null,
+      "ece_cal": null,
+      "note": "constant training priors; macro F1 collapses because B and tie are never predicted"
+    }
+  ]
+}

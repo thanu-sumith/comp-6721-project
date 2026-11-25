@@ -54,5 +54,17 @@ if __name__ == "__main__":
         run("scripts/run_calibration.py", *common[:6])
         run("scripts/run_data_efficiency.py", *common, "--seeds", 42, 43,
             "--fractions", 0.25, 1.0, "--clean-fractions", 0.0, 0.1)
-        print("Outputs:", sorted(p.name for p in (tmp / "results").rglob("*") if p.is_file())[:30])
+        run("scripts/run_bias_analysis.py", *common, "--swap-models", "numeric_lr")
+        run("scripts/run_error_analysis.py", *common[:6], "--seeds", 42)
+        run("scripts/summarize_results.py", "--results", tmp / "results")
+
+        # guards: the local test partition must never be scored, and every baseline must
+        # record that its hyperparameter came from a train-only procedure.
+        R = tmp / "results"
+        assert not [p.name for p in (R / "predictions").glob("*test*")], "test partition scored"
+        shard = json.loads((R / "metrics" / "baselines__numeric_lr__plain.json").read_text())
+        assert "train_only_grouped_cv" in shard["selection"]["protocol"]
+        assert (R / "metrics" / "bias_analysis.json").exists()
+        assert (R / "metrics" / "error_analysis_summary.json").exists()
+        print("Outputs:", sorted(p.name for p in R.rglob("*") if p.is_file())[:30])
         print("SMOKE TEST PASSED (synthetic data; ignore the numbers)")
