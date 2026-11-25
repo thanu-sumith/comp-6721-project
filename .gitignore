@@ -11,3 +11,6 @@ data/splits/*
 *.joblib
 *.pkl
 data/cache/
+
+results/predictions/
+results/models/
