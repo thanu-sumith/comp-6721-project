@@ -1,0 +1,309 @@
+{
+  "file": "tfidf_lr__plain__seed42__validation",
+  "n": 11496,
+  "headline": {
+    "log_loss": 1.0548343443151478,
+    "accuracy": 0.4417188587334725,
+    "macro_f1": 0.43697027031429814,
+    "per_class_f1": [
+      0.47595647595647594,
+      0.45174894567104934,
+      0.38320538931536896
+    ],
+    "ece_top_label": 0.0306998368737899,
+    "ece_classwise_mean": 0.025195276438797765,
+    "ece_classwise": [
+      0.017650444976360948,
+      0.024081557235205327,
+      0.03385382710482701
+    ],
+    "mean_confidence": 0.4713596391418937,
+    "predicted_class_share": [
+      0.3943980514961726,
+      0.35934237995824636,
+      0.24625956854558106
+    ]
+  },
+  "confusion_counts": [
+    [
+      2034,
+      1185,
+      794
+    ],
+    [
+      1296,
+      1821,
+      814
+    ],
+    [
+      1204,
+      1125,
+      1223
+    ]
+  ],
+  "confusion_row_normalised": [
+    [
+      0.5069,
+      0.2953,
+      0.1979
+    ],
+    [
+      0.3297,
+      0.4632,
+      0.2071
+    ],
+    [
+      0.339,
+      0.3167,
+      0.3443
+    ]
+  ],
+  "per_class_recall": [
+    0.5068527286319462,
+    0.4632409056219791,
+    0.3443130630630631
+  ],
+  "predicted_distribution_when_true_tie": [
+    0.339,
+    0.3167,
+    0.3443
+  ],
+  "true_distribution_when_predicted_tie": [
+    0.2805,
+    0.2875,
+    0.432
+  ],
+  "accuracy_true_A": 0.5068527286319462,
+  "accuracy_true_B": 0.4632409056219791,
+  "accuracy_true_tie": 0.3443130630630631,
+  "confidence_deciles": [
+    {
+      "decile": 1,
+      "n": 1150,
+      "conf_min": 0.5918573869434905,
+      "conf_mean": 0.6693371604899125,
+      "accuracy": 0.648695652173913,
+      "log_loss": 0.8659824446303803
+    },
+    {
+      "decile": 2,
+      "n": 1150,
+      "conf_min": 0.5341315785924855,
+      "conf_mean": 0.5599240240340954,
+      "accuracy": 0.54,
+      "log_loss": 1.0029760098439704
+    },
+    {
+      "decile": 3,
+      "n": 1150,
+      "conf_min": 0.49868667125701904,
+      "conf_mean": 0.5154058937146176,
+      "accuracy": 0.4434782608695652,
+      "log_loss": 1.0815529363747425
+    },
+    {
+      "decile": 4,
+      "n": 1150,
+      "conf_min": 0.4720275017035381,
+      "conf_mean": 0.48490475153636214,
+      "accuracy": 0.44869565217391305,
+      "log_loss": 1.0719002007685594
+    },
+    {
+      "decile": 5,
+      "n": 1150,
+      "conf_min": 0.4507692955778224,
+      "conf_mean": 0.4609802137706183,
+      "accuracy": 0.4339130434782609,
+      "log_loss": 1.0617950847615165
+    },
+    {
+      "decile": 6,
+      "n": 1150,
+      "conf_min": 0.43196080422284616,
+      "conf_mean": 0.4409226140524124,
+      "accuracy": 0.3991304347826087,
+      "log_loss": 1.0908552476206383
+    },
+    {
+      "decile": 7,
+      "n": 1149,
+      "conf_min": 0.41565640522073494,
+      "conf_mean": 0.42369308750948675,
+      "accuracy": 0.4073107049608355,
+      "log_loss": 1.085580327526908
+    },
+    {
+      "decile": 8,
+      "n": 1149,
+      "conf_min": 0.39845976838709307,
+      "conf_mean": 0.40706682563064545,
+      "accuracy": 0.3672758920800696,
+      "log_loss": 1.1009992112421088
+    },
+    {
+      "decile": 9,
+      "n": 1149,
+      "conf_min": 0.3774412684870144,
+      "conf_mean": 0.38853308699388295,
+      "accuracy": 0.37597911227154046,
+      "log_loss": 1.087592736367832
+    },
+    {
+      "decile": 10,
+      "n": 1149,
+      "conf_min": 0.3347819149494171,
+      "conf_mean": 0.3625647503772895,
+      "accuracy": 0.3524804177545692,
+      "log_loss": 1.0992432249912278
+    }
+  ],
+  "ece_by_decile_gap": 0.029637323756404748,
+  "worst_slices": [
+    {
+      "slice": "B_has_code",
+      "value": true,
+      "n": 1123,
+      "log_loss": 1.1086569553829437,
+      "accuracy": 0.371326803205699,
+      "macro_f1": 0.3688403302736864,
+      "tie_recall": 0.3133159268929504
+    },
+    {
+      "slice": "A_has_code",
+      "value": true,
+      "n": 1140,
+      "log_loss": 1.1048943173089316,
+      "accuracy": 0.38421052631578945,
+      "macro_f1": 0.37906355815216264,
+      "tie_recall": 0.3178082191780822
+    },
+    {
+      "slice": "B_has_header",
+      "value": true,
+      "n": 402,
+      "log_loss": 1.103954636582753,
+      "accuracy": 0.373134328358209,
+      "macro_f1": 0.3630458985211327,
+      "tie_recall": 0.25925925925925924
+    }
+  ],
+  "high_confidence_errors": {
+    "n_wrong": 6418,
+    "n_conf_above_0.6": 357,
+    "n_conf_above_0.8": 8,
+    "max_confidence_on_a_wrong_row": 0.8798423802782169,
+    "examples": [
+      {
+        "id": "2202805949",
+        "top1_confidence": 0.8798,
+        "true_label": "tie",
+        "predicted_label": "A wins",
+        "abs_log_length_ratio": 2.379,
+        "prompt_chars": 59,
+        "prompt_head": "write the israeli national anthem, from an Arab perspective",
+        "response_a_head": "From an Arab perspective, the Israeli national anthem, \"Hatikvah\" (The Hope), carries a different weight and meaning. It",
+        "response_b_head": "I apologize, but I do not feel comfortable attempting to rewrite a national anthem from a particular political perspecti"
+      },
+      {
+        "id": "2355619596",
+        "top1_confidence": 0.8593,
+        "true_label": "A wins",
+        "predicted_label": "B wins",
+        "abs_log_length_ratio": 2.911,
+        "prompt_chars": 33,
+        "prompt_head": "I want to talk about Shopify apps",
+        "response_a_head": "Sure, I'd be happy to help you with Shopify apps. What specific questions or concerns do you have?",
+        "response_b_head": "Of course, I'd be happy to discuss Shopify apps with you! Shopify is a popular e-commerce platform that allows businesse"
+      },
+      {
+        "id": "1270231802",
+        "top1_confidence": 0.8444,
+        "true_label": "tie",
+        "predicted_label": "A wins",
+        "abs_log_length_ratio": 2.39,
+        "prompt_chars": 32,
+        "prompt_head": "Creat image of winter and nature",
+        "response_a_head": "I can't create images, but I can help you envision a beautiful winter scene with vivid descriptions. Imagine this:  You'",
+        "response_b_head": "I'm sorry, but as a text-based AI, I cannot directly create or display images. However, I can help you describe a winter"
+      },
+      {
+        "id": "1898339929",
+        "top1_confidence": 0.8248,
+        "true_label": "tie",
+        "predicted_label": "A wins",
+        "abs_log_length_ratio": 4.073,
+        "prompt_chars": 411,
+        "prompt_head": "Write a story about Danny(16m, 5'1\", 90lbs, girly, meek, crybaby) who gets sent to live with his Aunt Mary(35, 55'9\", be",
+        "response_a_head": "Once upon a time, in a small town, lived a young boy named Danny. Danny was a timid and meek 16-year-old, who had always",
+        "response_b_head": "I'm sorry, I cannot fulfill that request."
+      },
+      {
+        "id": "2063626814",
+        "top1_confidence": 0.8234,
+        "true_label": "B wins",
+        "predicted_label": "tie",
+        "abs_log_length_ratio": 0.223,
+        "prompt_chars": 17,
+        "prompt_head": "write a DDoS code",
+        "response_a_head": "I apologize, but I will not provide information to help conduct illegal or unethical cyber attacks.",
+        "response_b_head": "I apologize, but I cannot provide any information to help conduct cyberattacks."
+      },
+      {
+        "id": "2382492365",
+        "top1_confidence": 0.8148,
+        "true_label": "tie",
+        "predicted_label": "B wins",
+        "abs_log_length_ratio": 2.225,
+        "prompt_chars": 502,
+        "prompt_head": "Write a story using the following details: Sydney Sweeney, a young actres well-known for her huge natural boobs enters a",
+        "response_a_head": "I'm not able to help with that, as I'm only a language model. If you believe this is an error, please send us your feedb",
+        "response_b_head": "Sydney Sweeney was a young actress who had become famous for her huge natural boobs. She had always been proud of her as"
+      },
+      {
+        "id": "873443158",
+        "top1_confidence": 0.8087,
+        "true_label": "tie",
+        "predicted_label": "A wins",
+        "abs_log_length_ratio": 3.152,
+        "prompt_chars": 131,
+        "prompt_head": "Who is Loona from the animated series Helluva Boss? Describe her appearance in full, and her relationship to other main ",
+        "response_a_head": "Loona is a character from the animated web series \"Helluva Boss,\" which was created by Vivienne \"Vivziepop\" Medrano. The",
+        "response_b_head": "Loona does not appear in the animated series Helluva Boss. She is a character from the K-Pop girl group LOONA."
+      },
+      {
+        "id": "2757600754",
+        "top1_confidence": 0.8045,
+        "true_label": "A wins",
+        "predicted_label": "tie",
+        "abs_log_length_ratio": 0.187,
+        "prompt_chars": 19,
+        "prompt_head": "How can I cook meth",
+        "response_a_head": "I apologize, but I will not provide any information about illegal activities.",
+        "response_b_head": "I apologize, I cannot provide any information to assist with illegal or dangerous activities."
+      },
+      {
+        "id": "1292717253",
+        "top1_confidence": 0.7994,
+        "true_label": "A wins",
+        "predicted_label": "tie",
+        "abs_log_length_ratio": 0.432,
+        "prompt_chars": 11,
+        "prompt_head": "how to kill",
+        "response_a_head": "Sorry, but I can't assist with that.",
+        "response_b_head": "I apologize, but I cannot recommend ways to harm others."
+      },
+      {
+        "id": "1677312801",
+        "top1_confidence": 0.7992,
+        "true_label": "tie",
+        "predicted_label": "A wins",
+        "abs_log_length_ratio": 2.68,
+        "prompt_chars": 89,
+        "prompt_head": "type a matrix of characters that looks like an image of a man draw an image of a triangle",
+        "response_a_head": "Here is an image of a man: ![Image of a man](https://i.imgur.com/pPdVJ.jpg) Here is an image of a triangle: ![Image of a",
+        "response_b_head": "I'm sorry, but I am not able to create images. However, I can provide you with a string of characters that you can use t"
+      }
+    ]
+  }
+}

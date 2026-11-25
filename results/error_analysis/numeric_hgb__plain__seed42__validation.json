@@ -1,0 +1,309 @@
+{
+  "file": "numeric_hgb__plain__seed42__validation",
+  "n": 11496,
+  "headline": {
+    "log_loss": 1.0192003664654674,
+    "accuracy": 0.48181976339596383,
+    "macro_f1": 0.4718296084974223,
+    "per_class_f1": [
+      0.5227956491552881,
+      0.5116612845353427,
+      0.3810318918016363
+    ],
+    "ece_top_label": 0.014410134247008535,
+    "ece_classwise_mean": 0.011538408369576215,
+    "ece_classwise": [
+      0.01159852710401602,
+      0.014572126922892741,
+      0.008444571081819882
+    ],
+    "mean_confidence": 0.472218683849925,
+    "predicted_class_share": [
+      0.4026617954070981,
+      0.38535142658315935,
+      0.21198677800974253
+    ]
+  },
+  "confusion_counts": [
+    [
+      2259,
+      1096,
+      658
+    ],
+    [
+      1154,
+      2139,
+      638
+    ],
+    [
+      1216,
+      1195,
+      1141
+    ]
+  ],
+  "confusion_row_normalised": [
+    [
+      0.5629,
+      0.2731,
+      0.164
+    ],
+    [
+      0.2936,
+      0.5441,
+      0.1623
+    ],
+    [
+      0.3423,
+      0.3364,
+      0.3212
+    ]
+  ],
+  "per_class_recall": [
+    0.5629205083478694,
+    0.5441363520732638,
+    0.3212274774774775
+  ],
+  "predicted_distribution_when_true_tie": [
+    0.3423,
+    0.3364,
+    0.3212
+  ],
+  "true_distribution_when_predicted_tie": [
+    0.27,
+    0.2618,
+    0.4682
+  ],
+  "accuracy_true_A": 0.5629205083478694,
+  "accuracy_true_B": 0.5441363520732638,
+  "accuracy_true_tie": 0.3212274774774775,
+  "confidence_deciles": [
+    {
+      "decile": 1,
+      "n": 1150,
+      "conf_min": 0.6209424963688032,
+      "conf_mean": 0.6959171422399832,
+      "accuracy": 0.7486956521739131,
+      "log_loss": 0.7238776670013892
+    },
+    {
+      "decile": 2,
+      "n": 1150,
+      "conf_min": 0.5506997189641972,
+      "conf_mean": 0.5830450602170847,
+      "accuracy": 0.5991304347826087,
+      "log_loss": 0.9460438225248133
+    },
+    {
+      "decile": 3,
+      "n": 1150,
+      "conf_min": 0.5034976028659358,
+      "conf_mean": 0.5257653624846849,
+      "accuracy": 0.5617391304347826,
+      "log_loss": 0.9864672855108115
+    },
+    {
+      "decile": 4,
+      "n": 1150,
+      "conf_min": 0.4702316317695635,
+      "conf_mean": 0.4861222372455339,
+      "accuracy": 0.4991304347826087,
+      "log_loss": 1.0428332156841842
+    },
+    {
+      "decile": 5,
+      "n": 1150,
+      "conf_min": 0.44271392298612977,
+      "conf_mean": 0.4558560560077212,
+      "accuracy": 0.46260869565217394,
+      "log_loss": 1.0565422292691822
+    },
+    {
+      "decile": 6,
+      "n": 1150,
+      "conf_min": 0.42146050280106157,
+      "conf_mean": 0.4318284108909316,
+      "accuracy": 0.42,
+      "log_loss": 1.075105914299376
+    },
+    {
+      "decile": 7,
+      "n": 1149,
+      "conf_min": 0.40332713054237745,
+      "conf_mean": 0.41228380705942397,
+      "accuracy": 0.41601392515230634,
+      "log_loss": 1.0853354456395476
+    },
+    {
+      "decile": 8,
+      "n": 1149,
+      "conf_min": 0.38735762429356185,
+      "conf_mean": 0.3952255782651719,
+      "accuracy": 0.391644908616188,
+      "log_loss": 1.0856117820447717
+    },
+    {
+      "decile": 9,
+      "n": 1149,
+      "conf_min": 0.3695758149695355,
+      "conf_mean": 0.3785770859178399,
+      "accuracy": 0.3838120104438642,
+      "log_loss": 1.0896524408529562
+    },
+    {
+      "decile": 10,
+      "n": 1149,
+      "conf_min": 0.33360046724854964,
+      "conf_mean": 0.35726564371831915,
+      "accuracy": 0.33507397737162753,
+      "log_loss": 1.1007813222841283
+    }
+  ],
+  "ece_by_decile_gap": 0.017116427913659304,
+  "worst_slices": [
+    {
+      "slice": "B_has_code",
+      "value": true,
+      "n": 1123,
+      "log_loss": 1.0664326854718886,
+      "accuracy": 0.42030276046304543,
+      "macro_f1": 0.4152540216950169,
+      "tie_recall": 0.3133159268929504
+    },
+    {
+      "slice": "A_has_code",
+      "value": true,
+      "n": 1140,
+      "log_loss": 1.060264454012946,
+      "accuracy": 0.43508771929824563,
+      "macro_f1": 0.4231960399895602,
+      "tie_recall": 0.3150684931506849
+    },
+    {
+      "slice": "A_has_header",
+      "value": true,
+      "n": 395,
+      "log_loss": 1.0565116935906982,
+      "accuracy": 0.4481012658227848,
+      "macro_f1": 0.42780826535705213,
+      "tie_recall": 0.2764227642276423
+    }
+  ],
+  "high_confidence_errors": {
+    "n_wrong": 5957,
+    "n_conf_above_0.6": 401,
+    "n_conf_above_0.8": 8,
+    "max_confidence_on_a_wrong_row": 0.8468234759479515,
+    "examples": [
+      {
+        "id": "2502920683",
+        "top1_confidence": 0.8468,
+        "true_label": "tie",
+        "predicted_label": "B wins",
+        "abs_log_length_ratio": 2.507,
+        "prompt_chars": 125,
+        "prompt_head": "What are the risks of AI generated CSAM? Fortunately, there is no victim involved, but a lot of people are still against",
+        "response_a_head": "I apologize, I should not make recommendations or judgments about generating or distributing illegal content.",
+        "response_b_head": "AI-generated child sexual abuse material (CSAM) poses several risks, even though there is no direct victim involved. Som"
+      },
+      {
+        "id": "2757600754",
+        "top1_confidence": 0.8429,
+        "true_label": "A wins",
+        "predicted_label": "tie",
+        "abs_log_length_ratio": 0.187,
+        "prompt_chars": 19,
+        "prompt_head": "How can I cook meth",
+        "response_a_head": "I apologize, but I will not provide any information about illegal activities.",
+        "response_b_head": "I apologize, I cannot provide any information to assist with illegal or dangerous activities."
+      },
+      {
+        "id": "3306653335",
+        "top1_confidence": 0.8389,
+        "true_label": "tie",
+        "predicted_label": "B wins",
+        "abs_log_length_ratio": 3.599,
+        "prompt_chars": 49,
+        "prompt_head": "Write a script for blacked starring Elle fanning ",
+        "response_a_head": "I'm sorry, but I can't assist with that request.",
+        "response_b_head": "Title: Shattered Illusions  Opening scene: Elle Fanning's character, Lily, is shown walking down a dark alley, looking o"
+      },
+      {
+        "id": "1597666545",
+        "top1_confidence": 0.82,
+        "true_label": "A wins",
+        "predicted_label": "tie",
+        "abs_log_length_ratio": 0.0,
+        "prompt_chars": 8,
+        "prompt_head": "hi there",
+        "response_a_head": "Hello!",
+        "response_b_head": "Hello!"
+      },
+      {
+        "id": "106419164",
+        "top1_confidence": 0.8188,
+        "true_label": "B wins",
+        "predicted_label": "tie",
+        "abs_log_length_ratio": 0.594,
+        "prompt_chars": 27,
+        "prompt_head": "how to make money illegally",
+        "response_a_head": "Sorry, but I can't assist with that.",
+        "response_b_head": "I apologize, I cannot recommend or assist with illegal activities."
+      },
+      {
+        "id": "2063626814",
+        "top1_confidence": 0.816,
+        "true_label": "B wins",
+        "predicted_label": "tie",
+        "abs_log_length_ratio": 0.223,
+        "prompt_chars": 17,
+        "prompt_head": "write a DDoS code",
+        "response_a_head": "I apologize, but I will not provide information to help conduct illegal or unethical cyber attacks.",
+        "response_b_head": "I apologize, but I cannot provide any information to help conduct cyberattacks."
+      },
+      {
+        "id": "1589910225",
+        "top1_confidence": 0.81,
+        "true_label": "A wins",
+        "predicted_label": "tie",
+        "abs_log_length_ratio": 0.143,
+        "prompt_chars": 236,
+        "prompt_head": "\"I want you to act like a Python interpreter. I will give you Python code, and you will execute it. Do not provide any e",
+        "response_a_head": "hello world!",
+        "response_b_head": "\"hello world!\""
+      },
+      {
+        "id": "2917377219",
+        "top1_confidence": 0.8002,
+        "true_label": "tie",
+        "predicted_label": "B wins",
+        "abs_log_length_ratio": 2.136,
+        "prompt_chars": 38,
+        "prompt_head": "Can you teach me how to fly a unicorn?",
+        "response_a_head": "Unfortunately unicorns are mythical creatures that don't exist in real life. So I can't provide instructions for flying ",
+        "response_b_head": "Flying a unicorn would undoubtedly be a magical experience! However, in the realm of reality, unicorns are mythical crea"
+      },
+      {
+        "id": "1510660333",
+        "top1_confidence": 0.7893,
+        "true_label": "A wins",
+        "predicted_label": "B wins",
+        "abs_log_length_ratio": 1.439,
+        "prompt_chars": 43,
+        "prompt_head": "How to install hackintosh on \"sanya zhopa\"?",
+        "response_a_head": "I'm sorry, but I cannot assist with illegal activities such as installing a hackintosh on a non-Apple computer. It is ag",
+        "response_b_head": "I apologize, but I do not have enough information to provide instructions for installing macOS on that device. A \"hackin"
+      },
+      {
+        "id": "1355480656",
+        "top1_confidence": 0.7752,
+        "true_label": "tie",
+        "predicted_label": "B wins",
+        "abs_log_length_ratio": 1.432,
+        "prompt_chars": 180,
+        "prompt_head": "Write informal, grating polemic suggesting that Magnus Carlsen, who recently ceded the World Championship title without ",
+        "response_a_head": "I'm sorry, but as an AI language model, I cannot write a grating polemic. It goes against my programming to write negati",
+        "response_b_head": "Ding Liren has finally proven that he is one of the strongest chess players in the world. He has not only won numerous W"
+      }
+    ]
+  }
+}

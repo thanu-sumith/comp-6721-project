@@ -72,3 +72,6 @@ class PreferenceModel:
         (almost) the same distribution here as `predict_proba`.
         """
         return normalize(self._proba(feats.design(swap=True))[:, SWAP_PERM])
+
+
+
