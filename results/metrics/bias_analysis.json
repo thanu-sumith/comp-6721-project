@@ -1,0 +1,253 @@
+{
+  "dataset_sha256": "0692154aaf20fc6649090c3f49b6b5dd1e693a765ecb5f0856ae0da5946f5be2",
+  "partition": "validation",
+  "seed": 42,
+  "local_test_scored": false,
+  "length_shortcut": {
+    "rule": {
+      "rule": "longer wins, |log ratio|<=0.02 -> tie",
+      "accuracy": 0.4341510090466249,
+      "log_loss": 1.5604813568999074,
+      "predicted_share": [
+        0.4822546972860125,
+        0.4836464857341684,
+        0.03409881697981907
+      ]
+    },
+    "single_feature_lr": {
+      "features": [
+        "log1p(len A) - log1p(len B)"
+      ],
+      "log_loss": 1.0775818983891248,
+      "accuracy": 0.42606123869171886,
+      "macro_f1": 0.3357847931419469,
+      "coefficients": {
+        "0": 0.246805308448861,
+        "1": -0.24546012330026204,
+        "2": -0.0013451851485964913
+      }
+    },
+    "prior_log_loss": 1.0972235340239587,
+    "note": "Compare a real model's validation log loss against these two floors. If it is close, length explains most of the signal."
+  },
+  "position_bias": [
+    {
+      "model": "numeric_lr",
+      "predicted_share": [
+        0.43380306193458595,
+        0.38856993736951984,
+        0.1776270006958942
+      ],
+      "true_share": [
+        0.34907794015309673,
+        0.34194502435629787,
+        0.3089770354906054
+      ],
+      "accuracy_when_true_A": 0.5873411412908048,
+      "accuracy_when_true_B": 0.5489697278046298,
+      "accuracy_when_true_tie": 0.268018018018018,
+      "mean_pA_minus_pB": 0.007937375855109681,
+      "flip_rate": 0.08289839944328461,
+      "flip_rate_label_matched": null,
+      "accuracy_after_swap": 0.4737299930410578,
+      "log_loss_after_swap": 1.0360060892090264,
+      "log_loss_swap_averaged": 1.035517381780806,
+      "mean_pA_minus_pB_after_swap": -0.008617419054583427,
+      "swap_consistency": "flip_rate = share of validation pairs whose judged winner changes when A and B are exchanged"
+    },
+    {
+      "model": "tfidf_lr",
+      "predicted_share": [
+        0.3713465553235908,
+        0.36021224773834376,
+        0.2684411969380654
+      ],
+      "true_share": [
+        0.34907794015309673,
+        0.34194502435629787,
+        0.3089770354906054
+      ],
+      "accuracy_when_true_A": 0.46324445551956145,
+      "accuracy_when_true_B": 0.44696006105316716,
+      "accuracy_when_true_tie": 0.3499436936936937,
+      "mean_pA_minus_pB": 0.006241197879286035,
+      "flip_rate": 0.528705636743215,
+      "flip_rate_label_matched": null,
+      "accuracy_after_swap": 0.4328462073764788,
+      "log_loss_after_swap": 1.1063359756181617,
+      "log_loss_swap_averaged": 1.0603160102463964,
+      "mean_pA_minus_pB_after_swap": -0.005668596623588738,
+      "swap_consistency": "flip_rate = share of validation pairs whose judged winner changes when A and B are exchanged"
+    },
+    {
+      "model": "length_lr",
+      "predicted_share": [
+        0.5391440501043842,
+        0.46085594989561585,
+        0.0
+      ],
+      "true_share": [
+        0.34907794015309673,
+        0.34194502435629787,
+        0.3089770354906054
+      ],
+      "accuracy_when_true_A": 0.6466483927236482,
+      "accuracy_when_true_B": 0.5858560162808446,
+      "accuracy_when_true_tie": 0.0,
+      "mean_pA_minus_pB": 0.008601400270627538,
+      "flip_rate": null,
+      "flip_rate_label_matched": null
+    },
+    {
+      "model": "length_rule",
+      "predicted_share": [
+        0.4822546972860125,
+        0.4836464857341684,
+        0.03409881697981907
+      ],
+      "true_share": [
+        0.34907794015309673,
+        0.34194502435629787,
+        0.3089770354906054
+      ],
+      "accuracy_when_true_A": 0.6027909294791927,
+      "accuracy_when_true_B": 0.6082421775629611,
+      "accuracy_when_true_tie": 0.05095720720720721,
+      "mean_pA_minus_pB": -0.0004466145630730439,
+      "flip_rate": null,
+      "flip_rate_label_matched": null
+    },
+    {
+      "model": "numeric_lr_swapaveraged",
+      "predicted_share": [
+        0.4143180236604036,
+        0.40727209464161446,
+        0.17840988169798191
+      ],
+      "true_share": [
+        0.34907794015309673,
+        0.34194502435629787,
+        0.3089770354906054
+      ],
+      "accuracy_when_true_A": 0.5681535011213555,
+      "accuracy_when_true_B": 0.5677944543373188,
+      "accuracy_when_true_tie": 0.26914414414414417,
+      "mean_pA_minus_pB": -0.00034002159973687315,
+      "flip_rate": null,
+      "flip_rate_label_matched": null
+    },
+    {
+      "model": "tfidf_lr_swapaveraged",
+      "predicted_share": [
+        0.3549930410577592,
+        0.3557759220598469,
+        0.2892310368823939
+      ],
+      "true_share": [
+        0.34907794015309673,
+        0.34194502435629787,
+        0.3089770354906054
+      ],
+      "accuracy_when_true_A": 0.49165213057562923,
+      "accuracy_when_true_B": 0.4891885016535233,
+      "accuracy_when_true_tie": 0.37697072072072074,
+      "mean_pA_minus_pB": 0.0002863006278486474,
+      "flip_rate": null,
+      "flip_rate_label_matched": null
+    }
+  ],
+  "author_predictiveness": {
+    "features": "one-hot model_a (41 incl. 'other') + one-hot model_b + same-author flag",
+    "train_vocabulary_size": 40,
+    "log_loss": 1.0502246163261149,
+    "accuracy": 0.44458942240779403,
+    "macro_f1": 0.3965370313671559,
+    "note": "Author identity is present in the training data and absent from the hidden test set. A low log loss here measures how much of the label is explained by who wrote the answer; it is a leakage/shortcut warning, not usable signal."
+  },
+  "top_numeric_features": [
+    {
+      "feature": "B_log_chars",
+      "coef_A_wins": 0.24033204563009972,
+      "coef_B_wins": 0.03427315879259086,
+      "coef_tie": -0.274605204422691,
+      "max_abs_coef": 0.274605204422691
+    },
+    {
+      "feature": "A_log_chars",
+      "coef_A_wins": 0.14512428132634977,
+      "coef_B_wins": 0.09508504380799371,
+      "coef_tie": -0.24020932513434387,
+      "max_abs_coef": 0.24020932513434387
+    },
+    {
+      "feature": "B_log_words",
+      "coef_A_wins": -0.237251583300518,
+      "coef_B_wins": 0.052509479666674755,
+      "coef_tie": 0.1847421036338414,
+      "max_abs_coef": 0.237251583300518
+    },
+    {
+      "feature": "diff_log_words",
+      "coef_A_wins": 0.22887298240547516,
+      "coef_B_wins": -0.17502029952721443,
+      "coef_tie": -0.0538526828782599,
+      "max_abs_coef": 0.22887298240547516
+    },
+    {
+      "feature": "log_prompt_chars",
+      "coef_A_wins": 0.05484120309109259,
+      "coef_B_wins": -0.18680396903240434,
+      "coef_tie": 0.13196276594131087,
+      "max_abs_coef": 0.18680396903240434
+    },
+    {
+      "feature": "response_jaccard",
+      "coef_A_wins": -0.09299498786243081,
+      "coef_B_wins": -0.07766880362057145,
+      "coef_tie": 0.17066379148300242,
+      "max_abs_coef": 0.17066379148300242
+    },
+    {
+      "feature": "log_prompt_words",
+      "coef_A_wins": -0.021846909533384046,
+      "coef_B_wins": 0.16597647059116677,
+      "coef_tie": -0.14412956105778366,
+      "max_abs_coef": 0.16597647059116677
+    },
+    {
+      "feature": "diff_log_lines",
+      "coef_A_wins": 0.14861007481579694,
+      "coef_B_wins": -0.15242131795829397,
+      "coef_tie": 0.003811243142497153,
+      "max_abs_coef": 0.15242131795829397
+    },
+    {
+      "feature": "A_log_words",
+      "coef_A_wins": -0.046518435551130784,
+      "coef_B_wins": -0.0926465673949528,
+      "coef_tie": 0.13916500294608475,
+      "max_abs_coef": 0.13916500294608475
+    },
+    {
+      "feature": "diff_log_chars",
+      "coef_A_wins": -0.11384221943378554,
+      "coef_B_wins": 0.07440444903811075,
+      "coef_tie": 0.03943777039567444,
+      "max_abs_coef": 0.11384221943378554
+    },
+    {
+      "feature": "diff_type_token_ratio",
+      "coef_A_wins": 0.0964911102978395,
+      "coef_B_wins": -0.09041721738941656,
+      "coef_tie": -0.006073892908423876,
+      "max_abs_coef": 0.0964911102978395
+    },
+    {
+      "feature": "diff_refusal_hits",
+      "coef_A_wins": -0.09058198075256019,
+      "coef_B_wins": 0.08897632475634012,
+      "coef_tie": 0.0016056559962199094,
+      "max_abs_coef": 0.09058198075256019
+    }
+  ]
+}

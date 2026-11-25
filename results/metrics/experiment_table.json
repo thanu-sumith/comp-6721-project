@@ -2,6 +2,138 @@
   "prior_log_loss": 1.0972235340239587,
   "rows": [
     {
+      "model": "numeric_hgb",
+      "variant": "swapaug",
+      "selection": "none (single value)",
+      "chosen_C": 1.0,
+      "log_loss": 1.0158427504037217,
+      "log_loss_std": 0.0001751398467519664,
+      "accuracy": 0.4847773138482951,
+      "macro_f1": 0.4750392359965996,
+      "log_loss_cal": 1.0153418644297143,
+      "ece": 0.015404367476880697,
+      "ece_cal": 0.00906067118208111,
+      "seeds": [
+        42,
+        43,
+        44
+      ],
+      "note": ""
+    },
+    {
+      "model": "numeric_hgb",
+      "variant": "plain",
+      "selection": "none (single value)",
+      "chosen_C": 1.0,
+      "log_loss": 1.0191288283447124,
+      "log_loss_std": 0.00011224216751400522,
+      "accuracy": 0.4829215959174205,
+      "macro_f1": 0.4728629989893607,
+      "log_loss_cal": 1.0187084420479096,
+      "ece": 0.014199564849584201,
+      "ece_cal": 0.009621747152773988,
+      "seeds": [
+        42,
+        43,
+        44
+      ],
+      "note": ""
+    },
+    {
+      "model": "numeric_lr",
+      "variant": "swapaug",
+      "selection": "train-CV (3-fold, prompt-grouped)",
+      "chosen_C": 0.01,
+      "log_loss": 1.0351036967856397,
+      "log_loss_std": 0.0,
+      "accuracy": 0.4756437021572721,
+      "macro_f1": 0.4595946565678299,
+      "log_loss_cal": 1.0350689435748386,
+      "ece": 0.020165088012480223,
+      "ece_cal": 0.014099356744036206,
+      "seeds": [
+        42,
+        43,
+        44
+      ],
+      "note": ""
+    },
+    {
+      "model": "numeric_lr",
+      "variant": "plain",
+      "selection": "train-CV (3-fold, prompt-grouped)",
+      "chosen_C": 0.01,
+      "log_loss": 1.035181296646984,
+      "log_loss_std": 0.0,
+      "accuracy": 0.4742519137091163,
+      "macro_f1": 0.45801543533368877,
+      "log_loss_cal": 1.0352413664843023,
+      "ece": 0.01927407824767847,
+      "ece_cal": 0.013330163874525515,
+      "seeds": [
+        42,
+        43,
+        44
+      ],
+      "note": ""
+    },
+    {
+      "model": "tfidf_lr",
+      "variant": "swapaug",
+      "selection": "train-CV (3-fold, prompt-grouped)",
+      "chosen_C": 0.3,
+      "log_loss": 1.0469041185002677,
+      "log_loss_std": 0.0,
+      "accuracy": 0.46624913013221986,
+      "macro_f1": 0.462059788363713,
+      "log_loss_cal": 1.042910841361554,
+      "ece": 0.019269218349716177,
+      "ece_cal": 0.014397451051344464,
+      "seeds": [
+        42,
+        43,
+        44
+      ],
+      "note": ""
+    },
+    {
+      "model": "author identity only",
+      "variant": "\u2014",
+      "selection": "none",
+      "log_loss": 1.0502246163261149,
+      "accuracy": 0.44458942240779403,
+      "macro_f1": 0.3965370313671559,
+      "note": "E1; analysis only \u2014 author is absent from the hidden test set"
+    },
+    {
+      "model": "tfidf_lr",
+      "variant": "plain",
+      "selection": "train-CV (3-fold, prompt-grouped)",
+      "chosen_C": 0.3,
+      "log_loss": 1.0548343443151478,
+      "log_loss_std": 0.0,
+      "accuracy": 0.44171885873347244,
+      "macro_f1": 0.43697027031429814,
+      "log_loss_cal": 1.0521222364496998,
+      "ece": 0.0306998368737899,
+      "ece_cal": 0.013215562987866048,
+      "seeds": [
+        42,
+        43,
+        44
+      ],
+      "note": ""
+    },
+    {
+      "model": "length only (1 feature LR)",
+      "variant": "\u2014",
+      "selection": "none",
+      "log_loss": 1.0775818983891248,
+      "accuracy": 0.42606123869171886,
+      "macro_f1": 0.3357847931419469,
+      "note": "E1 shortcut floor"
+    },
+    {
       "model": "class prior",
       "variant": "\u2014",
       "selection": "none",
@@ -13,6 +145,15 @@
       "ece": null,
       "ece_cal": null,
       "note": "constant training priors; macro F1 collapses because B and tie are never predicted"
+    },
+    {
+      "model": "length rule (longer wins)",
+      "variant": "\u2014",
+      "selection": "none",
+      "log_loss": 1.5604813568999074,
+      "accuracy": 0.4341510090466249,
+      "macro_f1": null,
+      "note": "E1 deterministic shortcut"
     }
   ]
 }

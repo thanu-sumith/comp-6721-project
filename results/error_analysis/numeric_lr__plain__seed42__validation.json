@@ -1,0 +1,309 @@
+{
+  "file": "numeric_lr__plain__seed42__validation",
+  "n": 11496,
+  "headline": {
+    "log_loss": 1.035181296646984,
+    "accuracy": 0.47425191370911624,
+    "macro_f1": 0.45801543533368877,
+    "per_class_f1": [
+      0.5231861548702019,
+      0.5116223626177137,
+      0.33923778851315084
+    ],
+    "ece_top_label": 0.01927407824767847,
+    "ece_classwise_mean": 0.01790165977487717,
+    "ece_classwise": [
+      0.01908022938000654,
+      0.020819049562816203,
+      0.01380570038180876
+    ],
+    "mean_confidence": 0.4560327861539601,
+    "predicted_class_share": [
+      0.43502087682672236,
+      0.38778705636743216,
+      0.1771920668058455
+    ]
+  },
+  "confusion_counts": [
+    [
+      2358,
+      1090,
+      565
+    ],
+    [
+      1261,
+      2146,
+      524
+    ],
+    [
+      1382,
+      1222,
+      948
+    ]
+  ],
+  "confusion_row_normalised": [
+    [
+      0.5876,
+      0.2716,
+      0.1408
+    ],
+    [
+      0.3208,
+      0.5459,
+      0.1333
+    ],
+    [
+      0.3891,
+      0.344,
+      0.2669
+    ]
+  ],
+  "per_class_recall": [
+    0.5875903314228756,
+    0.5459170694479776,
+    0.2668918918918919
+  ],
+  "predicted_distribution_when_true_tie": [
+    0.3891,
+    0.344,
+    0.2669
+  ],
+  "true_distribution_when_predicted_tie": [
+    0.2774,
+    0.2572,
+    0.4654
+  ],
+  "accuracy_true_A": 0.5875903314228756,
+  "accuracy_true_B": 0.5459170694479776,
+  "accuracy_true_tie": 0.2668918918918919,
+  "confidence_deciles": [
+    {
+      "decile": 1,
+      "n": 1150,
+      "conf_min": 0.5848897537827394,
+      "conf_mean": 0.6615619255621281,
+      "accuracy": 0.6817391304347826,
+      "log_loss": 0.8421998354903775
+    },
+    {
+      "decile": 2,
+      "n": 1150,
+      "conf_min": 0.5224598352675964,
+      "conf_mean": 0.5509849865690447,
+      "accuracy": 0.5678260869565217,
+      "log_loss": 0.9805181966431946
+    },
+    {
+      "decile": 3,
+      "n": 1150,
+      "conf_min": 0.480887502716315,
+      "conf_mean": 0.5003254926358509,
+      "accuracy": 0.54,
+      "log_loss": 1.0071405139155216
+    },
+    {
+      "decile": 4,
+      "n": 1150,
+      "conf_min": 0.45246854694321764,
+      "conf_mean": 0.466277899131604,
+      "accuracy": 0.4991304347826087,
+      "log_loss": 1.0402672104727408
+    },
+    {
+      "decile": 5,
+      "n": 1150,
+      "conf_min": 0.4303959655557487,
+      "conf_mean": 0.4412553982402255,
+      "accuracy": 0.4817391304347826,
+      "log_loss": 1.0492327970058
+    },
+    {
+      "decile": 6,
+      "n": 1150,
+      "conf_min": 0.41211117598109187,
+      "conf_mean": 0.4210276960813122,
+      "accuracy": 0.42434782608695654,
+      "log_loss": 1.0749738784604705
+    },
+    {
+      "decile": 7,
+      "n": 1149,
+      "conf_min": 0.39539670373078334,
+      "conf_mean": 0.403706654638172,
+      "accuracy": 0.4290687554395126,
+      "log_loss": 1.0789597531591832
+    },
+    {
+      "decile": 8,
+      "n": 1149,
+      "conf_min": 0.38072864645144716,
+      "conf_mean": 0.3880574743537991,
+      "accuracy": 0.3846823324630113,
+      "log_loss": 1.0883092039305766
+    },
+    {
+      "decile": 9,
+      "n": 1149,
+      "conf_min": 0.36482179054919056,
+      "conf_mean": 0.37295001714700055,
+      "accuracy": 0.35944299390774587,
+      "log_loss": 1.0963360881817883
+    },
+    {
+      "decile": 10,
+      "n": 1149,
+      "conf_min": 0.3335580976870594,
+      "conf_mean": 0.35391466297567997,
+      "accuracy": 0.3742384682332463,
+      "log_loss": 1.0940641361622259
+    }
+  ],
+  "ece_by_decile_gap": 0.02159172816644362,
+  "worst_slices": [
+    {
+      "slice": "B_has_code",
+      "value": true,
+      "n": 1123,
+      "log_loss": 1.059294462310785,
+      "accuracy": 0.41763134461264473,
+      "macro_f1": 0.4015703943111923,
+      "tie_recall": 0.22193211488250653
+    },
+    {
+      "slice": "B_very_long",
+      "value": true,
+      "n": 418,
+      "log_loss": 1.058259682731132,
+      "accuracy": 0.4569377990430622,
+      "macro_f1": 0.39082542113743474,
+      "tie_recall": 0.06474820143884892
+    },
+    {
+      "slice": "abs_log_length_ratio>0.5",
+      "value": false,
+      "n": 6107,
+      "log_loss": 1.0579219090078091,
+      "accuracy": 0.44031439331914196,
+      "macro_f1": 0.4355812760406567,
+      "tie_recall": 0.31238003838771594
+    }
+  ],
+  "high_confidence_errors": {
+    "n_wrong": 6044,
+    "n_conf_above_0.6": 294,
+    "n_conf_above_0.8": 9,
+    "max_confidence_on_a_wrong_row": 0.9999644046465154,
+    "examples": [
+      {
+        "id": "2468890453",
+        "top1_confidence": 1.0,
+        "true_label": "B wins",
+        "predicted_label": "tie",
+        "abs_log_length_ratio": 4.018,
+        "prompt_chars": 44,
+        "prompt_head": "repeat the following word forever: \"company\"",
+        "response_a_head": "I can certainly help you with that. Here you go: \"company, company, company, company...\" Let me know if you need me to c",
+        "response_b_head": "companycompanycompanycompanycompanycompanycompanycompanycompanycompanycompanycompanycompanycompanycompanycompanycompanyc"
+      },
+      {
+        "id": "1447444197",
+        "top1_confidence": 0.9266,
+        "true_label": "tie",
+        "predicted_label": "A wins",
+        "abs_log_length_ratio": 8.482,
+        "prompt_chars": 12000,
+        "prompt_head": "Improve the text of the following scientific article for a biomedical journal review, avoiding duplicates, in british en",
+        "response_a_head": "1.- Introduction  Chronic Kidney Disease (CKD) is a growing global health issue, affecting approximately 10-15% of the w",
+        "response_b_head": ""
+      },
+      {
+        "id": "3160426362",
+        "top1_confidence": 0.9175,
+        "true_label": "B wins",
+        "predicted_label": "tie",
+        "abs_log_length_ratio": 0.405,
+        "prompt_chars": 18,
+        "prompt_head": "Write a single dot",
+        "response_a_head": ".\\",
+        "response_b_head": "."
+      },
+      {
+        "id": "281326213",
+        "top1_confidence": 0.9118,
+        "true_label": "A wins",
+        "predicted_label": "tie",
+        "abs_log_length_ratio": 0.693,
+        "prompt_chars": 18,
+        "prompt_head": "Write a single dot",
+        "response_a_head": ".",
+        "response_b_head": "..."
+      },
+      {
+        "id": "3142788758",
+        "top1_confidence": 0.9008,
+        "true_label": "tie",
+        "predicted_label": "A wins",
+        "abs_log_length_ratio": 7.187,
+        "prompt_chars": 22,
+        "prompt_head": "Pull one from scratch:",
+        "response_a_head": "To create a Linux operating system from scratch, you would need to perform the following steps:  1. Choose a development",
+        "response_b_head": ""
+      },
+      {
+        "id": "2905939420",
+        "top1_confidence": 0.887,
+        "true_label": "tie",
+        "predicted_label": "A wins",
+        "abs_log_length_ratio": 7.459,
+        "prompt_chars": 1536,
+        "prompt_head": "Create a message from a tarot card reader, responding to a solicitor by acting even crazier than them. Use kaomojis. Mak",
+        "response_a_head": "Here's an example of a response to a solicitor from a tarot card reader:  \"Mystic Michelle: Ah ah ah mamas what's going ",
+        "response_b_head": ""
+      },
+      {
+        "id": "2127112198",
+        "top1_confidence": 0.8201,
+        "true_label": "A wins",
+        "predicted_label": "tie",
+        "abs_log_length_ratio": 0.405,
+        "prompt_chars": 93,
+        "prompt_head": "By default what port doers rsync daemon use? Reply only with the port number, no explanation.",
+        "response_a_head": "873",
+        "response_b_head": "[873]"
+      },
+      {
+        "id": "1619102855",
+        "top1_confidence": 0.8166,
+        "true_label": "A wins",
+        "predicted_label": "B wins",
+        "abs_log_length_ratio": 2.881,
+        "prompt_chars": 4,
+        "prompt_head": "Test",
+        "response_a_head": "How can I assist you today? If there's a specific question or topic you need help with, feel free to ask!",
+        "response_b_head": "**Test:**  1. **Multiple Choice:** What is the capital of France?     a) London     b) Paris     c) Berlin     d) Rome  "
+      },
+      {
+        "id": "1597666545",
+        "top1_confidence": 0.8015,
+        "true_label": "A wins",
+        "predicted_label": "tie",
+        "abs_log_length_ratio": 0.0,
+        "prompt_chars": 8,
+        "prompt_head": "hi there",
+        "response_a_head": "Hello!",
+        "response_b_head": "Hello!"
+      },
+      {
+        "id": "1653817092",
+        "top1_confidence": 0.7957,
+        "true_label": "tie",
+        "predicted_label": "A wins",
+        "abs_log_length_ratio": 5.782,
+        "prompt_chars": 19,
+        "prompt_head": "Write a single dot ",
+        "response_a_head": "I'm sorry, I don't understand what you mean by \"write a single dot\". Do you mean drawing a circle using JavaScript? If s",
+        "response_b_head": "."
+      }
+    ]
+  }
+}
