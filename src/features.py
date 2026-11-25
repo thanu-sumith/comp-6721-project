@@ -120,3 +120,22 @@ def build_tfidf(df, train_mask, max_chars=5000, max_features=50000):
     mask = np.asarray(train_mask)
     vec.fit(np.concatenate([ra[mask].to_numpy(), rb[mask].to_numpy()]))
     return TfidfFeatures(vec.transform(ra), vec.transform(rb))
+
+
+def build_tfidf_with_vectorizer(df, train_mask, max_chars=5000, max_features=50000):
+    """Like build_tfidf, but also returns the fitted vectoriser so unseen rows can be transformed."""
+    from sklearn.feature_extraction.text import TfidfVectorizer
+    ra = df.response_a_text.str.slice(0, max_chars)
+    rb = df.response_b_text.str.slice(0, max_chars)
+    vec = TfidfVectorizer(ngram_range=(1, 2), min_df=5, max_features=max_features,
+                          sublinear_tf=True, dtype=np.float32)
+    mask = np.asarray(train_mask)
+    vec.fit(np.concatenate([ra[mask].to_numpy(), rb[mask].to_numpy()]))
+    return TfidfFeatures(vec.transform(ra), vec.transform(rb)), vec
+
+
+def transform_tfidf(vec, df, max_chars=5000):
+    """Apply an already-fitted vectoriser to new rows (validation, test)."""
+    ra = df.response_a_text.str.slice(0, max_chars)
+    rb = df.response_b_text.str.slice(0, max_chars)
+    return TfidfFeatures(vec.transform(ra), vec.transform(rb))
